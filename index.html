@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>مخابز اليحي | الروابط</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- خط تجوال -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --bg: #f27e3e;      /* الخلفية العامة */
+      --card: #ffffff;    /* كروت بيضاء */
+      --text: #000000;    /* نص أسود */
+      --muted: #333333;   /* نص ثانوي */
+      --border: #000000;  /* حدود سوداء */
+      --radius: 16px;
+      --transition: .25s ease;
+      --shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Tajawal", sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      background: #f27e3e;
+      border-radius: 26px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    /* الهيدر */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      background: #ffffff;
+      border: 2px solid #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .brand-sub {
+      font-size: 13px;
+      color: #333;
+    }
+
+    /* التبويبات */
+    .tabs {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      margin-bottom: 16px;
+    }
+
+    .tab {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid #000;
+      font-size: 13px;
+      color: #000;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    .tab.active {
+      background: #000;
+      color: #fff;
+    }
+
+    /* الأقسام */
+    .section {
+      display: none;
+    }
+
+    .section.active {
+      display: block;
+      animation: fade .3s ease;
+    }
+
+    @keyframes fade {
+      from {opacity: 0; transform: translateY(5px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* الروابط */
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      padding: 12px;
+      border-radius: var(--radius);
+      border: 1px solid #000;
+      text-decoration: none;
+      color: #000;
+      transition: var(--transition);
+    }
+
+    .link:hover {
+      background: #f5f5f5;
+      transform: translateY(-3px);
+    }
+
+    .icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    /* أيقونات السوشيال SVG */
+    .social-icon {
+      width: 32px;
+      height: 32px;
+      fill: #f27e3e;
+      flex-shrink: 0;
+    }
+
+    .link-title {
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .link-sub {
+      font-size: 12px;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- الهيدر -->
+    <div class="header">
+      <div class="logo">
+        <img src="logo.jpeg" alt="Logo">
+      </div>
+      <div>
+        <div class="brand-title">مخابز اليحي</div>
+        <div class="brand-sub">جميع الروابط الرسمية في مكان واحد</div>
+      </div>
+    </div>
+
+    <!-- التبويبات -->
+    <div class="tabs">
+      <div class="tab active" data-target="main">الرئيسية</div>
+      <div class="tab" data-target="branches">الفروع</div>
+      <div class="tab" data-target="delivery">الطلبات</div>
+      <div class="tab" data-target="social">السوشيال</div>
+    </div>
+
+    <!-- الرئيسية -->
+    <div class="section active" id="main">
+      <div class="links">
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/545/545680.png">
+          <div>
+            <div class="link-title">الموقع الرسمي</div>
+            <div class="link-sub">تعرف على منتجاتنا وفروعنا</div>
+          </div>
+        </a>
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3595/3595455.png">
+          <div>
+            <div class="link-title">منيو المعجنات</div>
+            <div class="link-sub">قائمة المعجنات المحدثة</div>
+          </div>
+        </a>
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
+          <div>
+            <div class="link-title">Brick & Bread</div>
+            <div class="link-sub">قسم المطعم والخبز المميز</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- الفروع -->
+    <div class="section" id="branches">
+      <div class="links">
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+          <div><div class="link-title">فرع القطيف</div></div>
+        </a>
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+          <div><div class="link-title">فرع الدمام الحمراء</div></div>
+        </a>
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+          <div><div class="link-title">فرع الدمام العزيزية</div></div>
+        </a>
+
+        <a class="link" href="#">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/535/535239.png">
+          <div><div class="link-title">فرع الدمام الفيصلية</div></div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- الطلبات -->
+    <div class="section" id="delivery">
+      <div class="links">
+
+        <a class="link" href="https://wa.me/0000000000">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+          <div><div class="link-title">واتساب – فرع القطيف</div></div>
+        </a>
+
+        <a class="link" href="https://wa.me/0000000000">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+          <div><div class="link-title">واتساب – الدمام الحمراء</div></div>
+        </a>
+
+        <a class="link" href="https://wa.me/0000000000">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+          <div><div class="link-title">واتساب – الدمام العزيزية</div></div>
+        </a>
+
+        <a class="link" href="https://wa.me/0000000000">
+          <img class="icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png">
+          <div><div class="link-title">واتساب – الدمام الفيصلية</div></div>
+        </a>
+
+      </div>
+    </div>
+
+    <!-- السوشيال -->
+    <div class="section" id="social">
+      <div class="links">
+
+        <!-- Instagram -->
+        <a class="link" href="#">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm10 2c1.66 0 3 1.34 3 3v10c0 
+            1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3h10zm-5 3a5 5 0 100 10 5 5 0 000-10zm0 
+            2a3 3 0 110 6 3 3 0 010-6zm4.8-2.9a1.1 1.1 0 11-2.2 0 1.1 1.1 0 012.2 0z"/>
+          </svg>
+          <div><div class="link-title">Instagram</div></div>
+        </a>
+
+        <!-- TikTok -->
+        <a class="link" href="#">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12.5 2h3c.2 1.7 1.5 3.1 3.2 3.3v3.1c-1.3.1-2.6-.3-3.7-1v7.4c0 3-2.4 5.4-5.4 
+            5.4S4.2 17.8 4.2 14.8c0-3 2.4-5.4 5.4-5.4.5 0 1 .1 1.5.2V13c-.5-.3-1-.4-1.5-.4-1.3 0-2.4 
+            1.1-2.4 2.4s1.1 2.4 2.4 2.4 2.4-1.1 2.4-2.4V2z"/>
+          </svg>
+          <div><div class="link-title">TikTok</div></div>
+        </a>
+
+        <!-- Facebook -->
+        <a class="link" href="#">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 10-11.5 9.9v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.1 
+            1.8.1v2h-1c-1 0-1.3.6-1.3 1.2V12h2.3l-.4 3h-1.9v7A10 10 0 0022 12z"/>
+          </svg>
+          <div><div class="link-title">Facebook</div></div>
+        </a>
+
+        <!-- X -->
+        <a class="link" href="#">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M18 2l-5.4 7.1L6.5 2H2l7.8 9.6L2.3 22H6l5.6-7.5L17.5 22H22l-8-9.9L22 2h-4z"/>
+          </svg>
+          <div><div class="link-title">Twitter X</div></div>
+        </a>
+
+        <!-- Snapchat -->
+        <a class="link" href="#">
+          <svg class="social-icon" viewBox="0 0 24 24">
+            <path d="M12 2c3 0 5 2.4 5 5.3v1.2c0 .4.2.7.5.9.7.5 1.5 1 2.3 1.2.4.1.7.5.7.9 0 
+            .6-.6 1-1.2 1.1-.8.2-1.6.3-2.3.5-.3.1-.5.3-.5.6 0 .3.2.5.5.6.7.3 1.4.6 2.1.8.5.2.9.6.9 
+            1.1 0 .6-.6 1.1-1.3 1.1-.3 0-.6-.1-.9-.2-.8-.3-1.6-.6-2.4-.9-.3-.1-.6 0-.8.2-.8 
+            1.1-2.1 1.8-3.6 1.8s-2.8-.7-3.6-1.8c-.2-.2-.5-.3-.8-.2-.8.3-1.6.6-2.4.9-.3.1-.6.2-.9.2-.7 
+            0-1.3-.5-1.3-1.1 0-.5.4-.9.9-1.1.7-.2 1.4-.5 2.1-.8.3-.1.5-.3.5-.6 0-.3-.2-.5-.5-.6-.7-.2-1.5-.3-2.3-.5-.6-.1-1.2-.5-1.2-1.1 
+            0-.4.3-.8.7-.9.8-.2 1.6-.7 2.3-1.2.3-.2.5-.5.5-.9V7.3C7 4.4 9 2 12 2z"/>
+          </svg>
+          <div><div class="link-title">Snapchat</div></div>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const sections = document.querySelectorAll(".section");
+
+    tabs.forEach(tab => {
+      tab.onclick = () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        sections.forEach(sec => sec.classList.remove("active"));
+        document.getElementById(tab.dataset.target).classList.add("active");
+      };
+    });
+  </script>
+
+</body>
+</html>
