@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linktree Style Page</title>
 
+  <!-- مكتبة Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   <style>
     body {
       background: #f2f2f2;
@@ -12,19 +15,30 @@
       padding: 40px 0;
       display: flex;
       justify-content: center;
-      position: relative;
     }
 
-    /* زر المشاركة */
+    /* الكارت الأساسي */
+    .card {
+      width: 100%;
+      max-width: 400px;
+      background: #fff;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      position: relative; /* مهم عشان نثبت زر الشير جوّه الكارت */
+    }
+
+    /* زر الشير داخل الكارت */
     .share-btn {
       position: absolute;
-      top: 20px;
-      right: 20px;
+      top: 15px;
+      right: 15px;
       background: #000;
       color: #fff;
-      padding: 10px 14px;
+      padding: 10px;
       border-radius: 50%;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
       text-decoration: none;
       transition: 0.3s;
@@ -34,24 +48,13 @@
       background: #444;
     }
 
-    /* الكارت الأساسي */
-    .card {
-      width: 100%;
-      max-width: 400px;
-      margin: auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
     /* الصورة */
     .avatar {
       width: 120px;
       height: 120px;
       border-radius: 50%;
       margin-bottom: 15px;
+      margin-top: 20px;
     }
 
     /* الروابط */
@@ -82,10 +85,13 @@
 
 <body>
 
-  <!-- زر المشاركة -->
-  <a class="share-btn" onclick="sharePage()">⤴</a>
-
   <div class="card">
+
+    <!-- زر الشير داخل الكارت -->
+    <a class="share-btn" onclick="sharePage()">
+      <i class="fa-solid fa-share-alt"></i>
+    </a>
+
     <img src="profile.jpg" alt="Profile" class="avatar">
 
     <h2>اسمك هنا</h2>
