@@ -8,7 +8,6 @@
 
 <style>
 
-  /* تصميم للموبايل أولاً */
   body {
     font-family: 'Tajawal', sans-serif;
     background: #d3a273;
@@ -17,37 +16,39 @@
     color: #f8f4e8;
   }
 
-  .container {
+  .wrapper {
     width: 100%;
-    max-width: 360px; /* أصغر = أوضح على الموبايل */
-    margin: auto;
-    padding: 18px;
+    padding: 0;
+    margin: 0;
   }
 
   .card {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
     background: #d3a273;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 0 12px rgba(0,0,0,0.25);
+    padding: 22px;
+    border-radius: 18px;
+    box-shadow: 0 0 14px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.18);
     text-align: center;
   }
 
   .logo {
-    width: 115px;
+    width: 120px;
     border-radius: 50%;
     border: 3px solid #f8f4e8;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
   }
 
   h2 {
-    font-size: 24px;
-    margin: 6px 0 10px;
+    font-size: 26px;
+    margin: 10px 0;
   }
 
   p {
-    font-size: 17px;
-    margin: 0 0 18px;
+    font-size: 18px;
+    margin: 0 0 20px;
   }
 
   .btn {
@@ -55,50 +56,38 @@
     width: 100%;
     background: #5c2d35;
     color: #f8f4e8;
-    padding: 13px;
-    margin: 8px 0;
-    border-radius: 10px;
-    font-size: 17px;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-size: 18px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 0 6px rgba(0,0,0,0.25);
+    box-shadow: 0 0 8px rgba(0,0,0,0.25);
   }
 
   .btn:hover {
     opacity: 0.9;
   }
 
-  /* موبايل متوسط */
-  @media (min-width: 400px) {
-    .container {
-      max-width: 400px;
-      padding: 22px;
+  /* موبايل صغير جداً */
+  @media (max-width: 400px) {
+    .card {
+      padding: 18px;
+      max-width: 100%;
+    }
+    .logo {
+      width: 100px;
+    }
+    h2 {
+      font-size: 22px;
+    }
+    p {
+      font-size: 16px;
     }
     .btn {
-      font-size: 18px;
-      padding: 14px;
-    }
-    h2 { font-size: 26px; }
-    p { font-size: 18px; }
-  }
-
-  /* تابلت */
-  @media (min-width: 768px) {
-    .container {
-      max-width: 480px;
-      padding: 28px;
-    }
-    .card {
-      padding: 28px;
-    }
-    .logo { width: 140px; }
-    .btn { font-size: 19px; padding: 15px; }
-  }
-
-  /* كمبيوتر */
-  @media (min-width: 1024px) {
-    .container {
-      max-width: 520px;
+      font-size: 16px;
+      padding: 13px;
+      margin: 8px 0;
     }
   }
 
@@ -106,7 +95,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="wrapper">
   <div class="card">
     <img src="YOUR_LOGO_URL" class="logo">
     <h2>اسم شركتك</h2>
