@@ -16,53 +16,51 @@
     color: #f8f4e8;
   }
 
-  .wrapper {
+  .container {
     width: 100%;
-    padding: 0;
-    margin: 0;
+    max-width: 380px;   /* أهم نقطة: عرض مناسب للموبايل */
+    margin: auto;
+    padding: 16px;       /* تقليل المسافات */
   }
 
   .card {
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
     background: #d3a273;
-    padding: 22px;
-    border-radius: 18px;
-    box-shadow: 0 0 14px rgba(0,0,0,0.25);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.18);
     text-align: center;
   }
 
   .logo {
-    width: 120px;
+    width: 110px;
     border-radius: 50%;
     border: 3px solid #f8f4e8;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
   h2 {
-    font-size: 26px;
-    margin: 10px 0;
+    font-size: 24px;
+    margin: 6px 0 10px;
   }
 
   p {
-    font-size: 18px;
-    margin: 0 0 20px;
+    font-size: 17px;
+    margin: 0 0 16px;
   }
 
   .btn {
     display: block;
-    width: 100%;
+    width: 100%;             /* يمنع خروج الأزرار */
     background: #5c2d35;
     color: #f8f4e8;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 12px;
-    font-size: 18px;
+    padding: 14px;           /* حجم مناسب */
+    margin: 8px 0;           /* مسافات متناسقة */
+    border-radius: 10px;
+    font-size: 17px;
     font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+    box-shadow: 0 0 6px rgba(0,0,0,0.25);
   }
 
   .btn:hover {
@@ -71,23 +69,26 @@
 
   /* موبايل صغير جداً */
   @media (max-width: 400px) {
-    .card {
-      padding: 18px;
+    .container {
       max-width: 100%;
+      padding: 12px;
+    }
+    .card {
+      padding: 16px;
     }
     .logo {
-      width: 100px;
+      width: 95px;
     }
     h2 {
       font-size: 22px;
     }
     p {
-      font-size: 16px;
+      font-size: 15px;
     }
     .btn {
       font-size: 16px;
-      padding: 13px;
-      margin: 8px 0;
+      padding: 12px;
+      margin: 7px 0;
     }
   }
 
@@ -95,7 +96,7 @@
 </head>
 <body>
 
-<div class="wrapper">
+<div class="container">
   <div class="card">
     <img src="YOUR_LOGO_URL" class="logo">
     <h2>اسم شركتك</h2>
