@@ -23,7 +23,7 @@
     background: #d3a273;
     width: 90%;
     max-width: 400px;
-    padding: 22px 18px;
+    padding: 20px;
     border-radius: 18px;
     box-shadow: 0 0 14px rgba(0,0,0,0.25);
     border: 1px solid rgba(255,255,255,0.18);
@@ -47,14 +47,19 @@
     margin: 0 0 18px;
   }
 
+  .btn-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الأزرار */
+  }
+
   .btn {
-    display: block;
-    width: 100%;
+    flex: 0 0 48%; /* عرض الزر 50% تقريبًا مع فراغ بسيط */
     background: #5c2d35;
     color: #f8f4e8;
     padding: 14px;
-    margin: 10px 0;
-    border-radius: 12px;
+    border-radius: 10px;
     font-size: 17px;
     font-weight: 600;
     text-decoration: none;
@@ -63,7 +68,7 @@
   }
 
   .btn:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
     opacity: 0.9;
   }
 
@@ -71,7 +76,7 @@
   @media (max-width: 400px) {
     .card {
       width: 95%;
-      padding: 18px 14px;
+      padding: 16px;
     }
     .logo {
       width: 100px;
@@ -87,22 +92,7 @@
     .btn {
       font-size: 16px;
       padding: 12px;
-      margin: 8px 0;
     }
-  }
-
-  /* تحسينات للتابلت */
-  @media (min-width: 768px) {
-    .card {
-      max-width: 460px;
-      padding: 26px 22px;
-    }
-    .logo {
-      width: 140px;
-    }
-    h2 { font-size: 26px; }
-    p { font-size: 18px; }
-    .btn { font-size: 18px; padding: 14px; }
   }
 </style>
 </head>
@@ -113,10 +103,12 @@
   <h2>اسم شركتك</h2>
   <p>وصف مختصر عن خدمات الشركة</p>
 
-  <a href="WHATSAPP_LINK" class="btn">واتساب</a>
-  <a href="WEBSITE_LINK" class="btn">الموقع الرسمي</a>
-  <a href="INSTAGRAM_LINK" class="btn">انستغرام</a>
-  <a href="SERVICES_LINK" class="btn">خدماتنا</a>
+  <div class="btn-container">
+    <a href="WHATSAPP_LINK" class="btn">واتساب</a>
+    <a href="WEBSITE_LINK" class="btn">الموقع الرسمي</a>
+    <a href="INSTAGRAM_LINK" class="btn">انستغرام</a>
+    <a href="SERVICES_LINK" class="btn">خدماتنا</a>
+  </div>
 </div>
 
 </body>
