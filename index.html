@@ -5,50 +5,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linktree Style Page</title>
 
+  <!-- خط Tajawal -->
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+
   <!-- مكتبة Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
+      background: #d3a273;
+      font-family: 'Tajawal', sans-serif;
       padding: 40px 0;
       display: flex;
       justify-content: center;
     }
 
-    /* الكارت الأساسي */
     .card {
       width: 100%;
       max-width: 400px;
-      background: #fff;
+      background: #d3a273;
       padding: 25px;
       border-radius: 18px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       text-align: center;
-      position: relative; /* مهم عشان نثبت زر الشير جوّه الكارت */
+      position: relative;
     }
 
-    /* زر الشير داخل الكارت */
     .share-btn {
       position: absolute;
       top: 15px;
       right: 15px;
-      background: #000;
-      color: #fff;
+      background: #5c2d35;
+      color: #f4eded;
       padding: 10px;
-      border-radius: 50%;
-      font-size: 18px;
+      font-size: 15px;
       cursor: pointer;
       text-decoration: none;
       transition: 0.3s;
+      border: none;
     }
 
     .share-btn:hover {
-      background: #444;
+      background: white;
+      color: #5c2d35;
     }
 
-    /* الصورة */
     .avatar {
       width: 120px;
       height: 120px;
@@ -57,11 +58,41 @@
       margin-top: 20px;
     }
 
-    /* الروابط */
+    /* التبويبات */
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tab {
+      padding: 10px 15px;
+      background: #5c2d35;
+      color: #f4eded;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .tab:hover,
+    .tab.active {
+      background: white;
+      color: #5c2d35;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .link {
       display: block;
-      background: #000;
-      color: #fff;
+      background: #5c2d35;
+      color: #f1e9e9;
       padding: 12px;
       margin: 10px 0;
       border-radius: 10px;
@@ -74,7 +105,6 @@
       background: #444;
     }
 
-    /* على الشاشات الصغيرة (موبايل) */
     @media (max-width: 576px) {
       .card {
         width: 90%;
@@ -87,9 +117,9 @@
 
   <div class="card">
 
-    <!-- زر الشير داخل الكارت -->
+    <!-- زر الشير -->
     <a class="share-btn" onclick="sharePage()">
-      <i class="fa-solid fa-share-alt"></i>
+      <i class="fa-solid fa-arrow-up-from-bracket"></i>
     </a>
 
     <img src="profile.jpg" alt="Profile" class="avatar">
@@ -97,10 +127,26 @@
     <h2>اسمك هنا</h2>
     <p>روابطك الشخصية في مكان واحد</p>
 
-    <a href="#" class="link">فيسبوك</a>
-    <a href="#" class="link">انستجرام</a>
-    <a href="#" class="link">تيك توك</a>
-    <a href="#" class="link">يوتيوب</a>
+    <!-- التبويبات -->
+    <div class="tabs">
+      <div class="tab active" onclick="showTab('branches')">الفروع</div>
+      <div class="tab" onclick="showTab('social')">السوشيال ميديا</div>
+    </div>
+
+    <!-- محتوى الفروع -->
+    <div id="branches" class="tab-content active">
+      <a href="#" class="link">فرع الرياض</a>
+      <a href="#" class="link">فرع الدمام</a>
+      <a href="#" class="link">فرع جدة</a>
+    </div>
+
+    <!-- محتوى السوشيال -->
+    <div id="social" class="tab-content">
+      <a href="#" class="link">فيسبوك</a>
+      <a href="#" class="link">انستجرام</a>
+      <a href="#" class="link">تيك توك</a>
+      <a href="#" class="link">يوتيوب</a>
+    </div>
 
   </div>
 
@@ -115,6 +161,14 @@
       } else {
         alert("المشاركة غير مدعومة على هذا الجهاز");
       }
+    }
+
+    function showTab(tabName) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+
+      document.querySelector(`.tab[onclick="showTab('${tabName}')"]`).classList.add('active');
+      document.getElementById(tabName).classList.add('active');
     }
   </script>
 
