@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Linktree Style Page</title>
+  <title>>مخابز اليحي | الروابط</title>
 
   <!-- خط Tajawal -->
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -159,6 +159,28 @@
         width: 90%;
       }
     }
+    .footer {
+     
+      color: #fff;
+      text-align: center;
+      padding: 12px 10px;
+      font-size: 14px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      
+    }
+
+    .footer span.brand {
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+
+    .footer span.year {
+      margin-right: 4px;
+      font-weight: 600;
+    }
   </style>
 </head>
 
@@ -171,7 +193,7 @@
       <i class="fa-solid fa-arrow-up-from-bracket"></i>
     </a>
 
-    <img src="yh-logo.webp" alt="Profile" class="avatar">
+    <img src="img/yh-logo.webp" alt="Profile" class="avatar">
     <!-- التبويبات -->
     <div class="tabs">
       <div class="tab active" onclick="showTab('home')">
@@ -191,14 +213,15 @@
     <div id="home" class="tab-content active">
       <a href="https://alyahyabakeries.com/" class="link">الموقع الرسمي</a>
       <a href="https://breakbread.sa/" class="link">Break & Bread - إحدى مشاريع مخابز اليحيِّ</a>
+      <a href="mailto:info@alyahyabakeries.com" class="link">info@alyahyabakeries.com</a>
     </div>
 
     <!-- تبويب الفروع -->
     <div id="branches" class="tab-content">
-      <a href="#" class="link" onclick="openBranch('فرع العزيزية')">فرع العزيزية</a>
-      <a href="#" class="link" onclick="openBranch('فرع الحمراء')">فرع الحمراء</a>
-      <a href="#" class="link" onclick="openBranch('فرع الفيصلية')">فرع الفيصلية</a>
-      <a href="#" class="link" onclick="openBranch('فرع القطيف')">فرع القطيف</a>
+      <a href="#" class="link" onclick="openBranch('فرع العزيزية')">فرع العزيزية - الدمام - المنظقة الشرقية</a>
+      <a href="#" class="link" onclick="openBranch('فرع الحمراء')">فرع الحمراء - الدمام - المنطقة الشرقية</a>
+      <a href="#" class="link" onclick="openBranch('فرع الفيصلية')">فرع الفيصلية - الدمام - المنطقة الشرقية </a>
+      <a href="#" class="link" onclick="openBranch('فرع القطيف')">فرع القطيف - الدمام - المنطة الشرقية</a>
     </div>
 
 <!-- تبويب السوشيال -->
@@ -220,7 +243,11 @@
   </a>
 </div>
 
-
+ <footer class="footer">
+    <span>جميع الحقوق محفوظة</span>
+    <span class="brand">مخابز اليحي</span>
+    <span class="year">2026</span>
+  </footer>
   </div>
 
   <!-- شاشة منبثقة للفروع -->
@@ -264,8 +291,8 @@
     function sharePage() {
       if (navigator.share) {
         navigator.share({
-          title: 'صفحتي',
-          text: 'شارك صفحتي',
+          title: 'مخابز اليحي',
+          text: 'شارك صفحة مخابز اليحي',
           url: window.location.href
         });
       } else {
@@ -293,6 +320,13 @@
 
     function closeModal() {
       document.getElementById('modal').style.display = 'none';
+    }
+  </script>
+    <script>
+    // في حال أردت تحديث السنة تلقائيًا
+    const yearSpan = document.querySelector('.footer .year');
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
     }
   </script>
 
