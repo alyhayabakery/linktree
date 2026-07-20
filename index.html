@@ -43,7 +43,6 @@
       border: none;
       transition: 0.3s;
       border-radius: 10px;
-      
     }
 
     .share-btn:hover {
@@ -54,6 +53,7 @@
     .avatar {
       width: 120px;
       height: auto;
+      
       margin-bottom: 15px;
       margin-top: 20px;
     }
@@ -136,6 +136,15 @@
       text-decoration: none;
     }
 
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* يجعل الأيقونة + النص في المنتصف */
+  gap: 10px;
+}
+
+
+
     .close-btn {
       margin-top: 15px;
       padding: 10px;
@@ -164,7 +173,8 @@
 
     <img src="yh-logo.webp" alt="Profile" class="avatar">
 
- 
+    <h2>مخابز - اليحي</h2>
+   
 
     <!-- التبويبات -->
     <div class="tabs">
@@ -183,24 +193,37 @@
 
     <!-- تبويب الهوم -->
     <div id="home" class="tab-content active">
-      <a href="#" class="link">الموقع الرسمي</a>
-      <a href="#" class="link">Break & Bread - احدي مشاريع مخابز اليحي</a>
+      <a href="https://alyahyabakeries.com/" class="link">الموقع الرسمي</a>
+      <a href="https://breakbread.sa/" class="link">Break & Bread - إحدى مشاريعِ مخابزِ اليحيِّ</a>
     </div>
 
     <!-- تبويب الفروع -->
     <div id="branches" class="tab-content">
-      <a href="#" class="link" onclick="openBranch('الهفوف')">فرع الهفوف</a>
-      <a href="#" class="link" onclick="openBranch('المبرز')">فرع المبرز</a>
-      <a href="#" class="link" onclick="openBranch('الجفر')">فرع الجفر</a>
+      <a href="#" class="link" onclick="openBranch('فرع العزيزية')">فرع العزيزية</a>
+      <a href="#" class="link" onclick="openBranch('فرع الحمراء')">فرع الحمراء</a>
+      <a href="#" class="link" onclick="openBranch('فرع الفيصلية')">فرع الفيصلية</a>
+      <a href="#" class="link" onclick="openBranch('فرع القطيف')">فرع القطيف</a>
     </div>
 
-    <!-- تبويب السوشيال -->
-    <div id="social" class="tab-content">
-      <a href="#" class="link">فيسبوك</a>
-      <a href="#" class="link">انستجرام</a>
-      <a href="#" class="link">تيك توك</a>
-      <a href="#" class="link">يوتيوب</a>
-    </div>
+<!-- تبويب السوشيال -->
+<div id="social" class="tab-content">
+  <a href="#" class="link">
+    <i class="fa-brands fa-facebook"></i> فــيسبــوك
+  </a>
+
+  <a href="#" class="link">
+    <i class="fa-brands fa-instagram"></i> انستجـــرا م
+  </a>
+
+  <a href="#" class="link">
+    <i class="fa-brands fa-tiktok"></i> تــيــك  تــوك
+  </a>
+
+  <a href="#" class="link">
+    <i class="fa-brands fa-snapchat"></i> سناب شات
+  </a>
+</div>
+
 
   </div>
 
@@ -209,15 +232,39 @@
     <div class="modal-content">
       <h3 id="branchName"></h3>
 
-      <a href="#"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
-      <a href="#"><i class="fa-solid fa-phone"></i> اتصال</a>
-      <a href="#"><i class="fa-solid fa-location-dot"></i> الموقع</a>
+      <a id="whatsappLink" href="#"><i class="fa-brands fa-whatsapp"></i> واتساب</a>
+      <a id="phoneLink" href="#"><i class="fa-solid fa-phone"></i> اتصال</a>
+      <a id="mapLink" href="#"><i class="fa-solid fa-location-dot"></i> الموقع</a>
 
       <div class="close-btn" onclick="closeModal()">إغلاق</div>
     </div>
   </div>
 
   <script>
+
+    const branches = {
+      "فرع العزيزية": {
+        whatsapp: "https://wa.me/966536522444",
+        phone: "tel:0536522444",
+        map: "https://www.google.com/maps/place/%D9%85%D8%AE%D8%A7%D8%A8%D8%B2+%D8%A7%D9%84%D9%8A%D8%AD%D9%8A%D9%89%E2%80%AD/@26.4632302,50.0240877,14z/data=!4m7!3m6!1s0x3e49ff0022f3614d:0x2967548e71d0fb81!8m2!3d26.4632302!4d50.0621965!15sCinZhdiu2KfYqNiyINin2YTZitit2YrZiSDYr9in2LHZitmGINmF2YjZhForIinZhdiu2KfYqNiyINin2YTZitit2YrZiSDYr9in2LHZitmGINmF2YjZhJIBBmJha2VyeZoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQyNWtNMUp0TlRWalZWSlhXak5vTTFGNlJuaFRTR3h4VlVWc1JGSkhZeEFC4AEA-gEECAAQNw!16s%2Fg%2F11x0pjqrd8?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=09f52a0d-2ae1-4627-b612-b6f248d11926"
+      },
+      "فرع الحمراء": {
+        whatsapp: "https://wa.me/966541626888",
+        phone: "tel:0541626888",
+        map: "https://www.google.com/maps/place/Alyahya+Bakeries/@26.4593138,50.0774861,16z/data=!4m7!3m6!1s0x3e49fc1a6d9bbf7b:0xcf8f7e70c3566b73!8m2!3d26.4593138!4d50.0870133!15sCibZhdiu2KfYqNiyINin2YTZitit2YrZiSDYp9mE2K3Zhdix2KfYoVooIibZhdiu2KfYqNiyINin2YTZitit2YrZiSDYp9mE2K3Zhdix2KfYoZIBBmJha2VyeeABAA!16s%2Fg%2F11cm1r5w3b?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=2cb37861-c5b5-4369-abff-8e5e6616f6a8"
+      },
+      "فرع الفيصلية": {
+        whatsapp: "https://wa.me/966536922444",
+        phone: "tel:0536922444",
+        map: "https://www.google.com/maps/place/alyahya+bakeries/@26.4050485,50.0595401,17z/data=!4m6!3m5!1s0x3e49fda96dd25a2f:0xc3f800846f861d4f!8m2!3d26.4050485!4d50.062115!16s%2Fg%2F11rsr76hnf?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=d76f0308-3cea-4e58-86ed-28ade135175e"
+      },
+      "فرع القطيف": {
+        whatsapp: "https://wa.me/966138631010",
+        phone: "tel:966138631010",
+        map: "https://www.google.com/maps/place/AlYahya+Bakeries/@26.5478919,49.9346355,13z/data=!4m7!3m6!1s0x3e35ffb6c1b1c4b7:0xc398dc48928175f0!8m2!3d26.5478919!4d50.0108532!15sCiTZhdiu2KfYqNiyINin2YTZitit2YrZiSDYp9mE2YLYt9mK2YFaJiIk2YXYrtin2KjYsiDYp9mE2YrYrdmK2Ykg2KfZhNmC2LfZitmBkgEGYmFrZXJ54AEA!16s%2Fg%2F11fpg1__xj?entry=tts&g_ep=EgoyMDI1MTIwOS4wIPu8ASoASAFQAw%3D%3D&skid=0a9e4c71-3eaa-45ca-bf9d-3355679e70bf"
+      }
+    };
+
     function sharePage() {
       if (navigator.share) {
         navigator.share({
@@ -240,6 +287,11 @@
 
     function openBranch(name) {
       document.getElementById('branchName').innerText = name;
+
+      document.getElementById('whatsappLink').href = branches[name].whatsapp;
+      document.getElementById('phoneLink').href = branches[name].phone;
+      document.getElementById('mapLink').href = branches[name].map;
+
       document.getElementById('modal').style.display = 'flex';
     }
 
